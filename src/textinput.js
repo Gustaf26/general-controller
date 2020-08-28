@@ -1,14 +1,17 @@
 import React, {useState, useRef, useEffect, useReducer} from 'react';
+import 'dotenv'
 import { Button, ButtonGroup, FormGroup, Progress, Container, Fade} from 'reactstrap';
 import {NavLink} from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
 import { slideInLeft } from 'react-animations';
-import {EMOTIONS_KEY, DIFFICULTY_KEY} from 'dotenv'
 
 //JODIT TEXT EDITOR
 import 'jodit';
 import 'jodit/build/jodit.min.css';
 import JoditEditor from "jodit-react";
+
+const emotionsKey = process.env.REACT_APP_EMOTIONS_KEY
+const difficultyKey = process.env.REACT_APP_DIFFICULTY_KEY
 
 const slideinAnimation = keyframes`${slideInLeft}`;
 const SlideInElement = styled.div`
@@ -72,12 +75,14 @@ const getEmotion = (e) => {
         textEl = document.getElementById('text-editor');
         text = textEl.value
         setValue(text)
+
+        console.log(emotionsKey)
         
         fetch(`https://twinword-emotion-analysis-v1.p.rapidapi.com/analyze/?text=${text}`, {
                 "method": "GET",
                 "headers": {
                         "x-rapidapi-host": "twinword-emotion-analysis-v1.p.rapidapi.com",
-                        "x-rapidapi-key": EMOTIONS_KEY}})
+                        "x-rapidapi-key": emotionsKey}})
         .then( response=>response.json())
         .then((data)=> showEmotion(data.emotion_scores))
         .catch(err => {
@@ -117,7 +122,7 @@ const getDifficulty = (e) => {
  	"method": "GET",
  	"headers": {
  		"x-rapidapi-host": "twinword-language-scoring.p.rapidapi.com",
- 		"x-rapidapi-key": DIFFICULTY_KEY
+ 		"x-rapidapi-key": difficultyKey
  	}
  })
         .then( response=>response.json())
@@ -167,7 +172,7 @@ return ( diffLevel >0?
                                 {/* <Button onClick={()=>changeTheme()}/> */}
                                 <JoditEditor id="text-editor" 
                                         
-                                        // value={content}
+                                        value={content}
                                         config={{
                                                 toolbarSticky:true,
                                                 theme: 'dark',

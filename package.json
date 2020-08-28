@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^7.2.1",
     "bootstrap": "^4.5.0",
     "dotenv": "^8.2.0",
+    "env-cmd": "^10.1.0",
     "jodit-react": "^1.0.59",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
@@ -21,7 +22,7 @@
     "styled-components": "^5.1.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "env-cmd react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
