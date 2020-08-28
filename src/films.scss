@@ -1,0 +1,45 @@
+   
+
+
+.images-container{display: flex;
+  max-height: 50vh;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;}
+
+button{height:2rem;
+  padding-bottom:1rem;}
+
+.images-basic{
+  position: relative;
+  width: 300px;
+  height:auto;
+  padding: 0 0;
+  margin: auto 1em;
+  align-items: flex-start;
+  opacity:0.3;}
+
+#non-blur-image{
+    position: relative;
+    width: 300px;
+    height:auto;
+    padding: 0 0;
+    margin: auto 1em;
+    align-items: flex-start;
+    opacity:1;}
+
+#movie-plot{position:absolute;
+  top:0;
+  left:0;
+  padding:1rem;
+  background-color:lightgrey;}
+
+  .images-basic:hover{animation: bounce; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 2s; /* don't forget to set a duration! */}
+
+.images-basic div{
+    width: 130px}
+
+.images-basic div img{
+    width: 100%;
+    display: block}

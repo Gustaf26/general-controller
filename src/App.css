@@ -1,0 +1,47 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+#title{margin-bottom: 2.2rem;
+  font-size: xx-large;}
+
+#container {
+  background-image: url('./hola.jpg');
+  background-size: cover;
+  opacity: 0.8;
+  background-repeat: no-repeat;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+#filmcontainer{
+  min-height: 60vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: rgb(52, 136, 214);
+
+}
+
+#textinput{background-color: ivory;}
+
+#difficulty-bar{padding-top:30vh;}
+#emotions-bars{padding-top:20vh;}
+
+.App-link {
+  color: #61dafb;
+}
+
+
