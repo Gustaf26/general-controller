@@ -1,10 +1,10 @@
 import "./animation-styles.css";
 import React, {useState} from 'react';
-import {NavLink, Switch, Route, BrowserRouter, Redirect} from 'react-router-dom';
+import {Switch, Route, BrowserRouter, Redirect} from 'react-router-dom';
 import {Fade} from 'reactstrap'
 import Mainapp from './Mainapp';
 import Textinput from './textinput'
-import Films from './films'
+// import Films from './films'
 import './App.css';
 
 const App = (props) => {
@@ -28,7 +28,7 @@ const App = (props) => {
 
           <Switch>
               <Route path="/textinput" children={<Textinput/>} />
-              <Route path="/films" children={<Films/>} />
+              {/* <Route path="/films" children={<Films/>} /> */}
               <Fade in={fadeIn} unmountOnExit={true}>
                   <Route path="/mainapp" children={<Mainapp/>} />
               </Fade>

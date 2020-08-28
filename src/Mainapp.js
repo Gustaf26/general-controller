@@ -1,5 +1,5 @@
 import React from 'react';
-import {NavLink, Switch, Route, BrowserRouter, Redirect} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import {Container} from 'reactstrap';
 import './slide-style.scss'
 
@@ -129,13 +129,16 @@ const slides = [
               <NavLink id="nav" to="/textinput">
                 <h2 className="slideTitle">{slide.title}</h2>
               </NavLink>:
-              slide.id=="films"? 
-              <NavLink id="nav" to="/films">
-                <h2 className="slideTitle">{slide.title}</h2>
-              </NavLink>:
-              <h2 className="slideTitle">{slide.title}</h2>}
+
+                /* slide.id=="films"? 
+                <NavLink id="nav" to="/films">
+                  <h2 className="slideTitle">{slide.title}</h2>
+                </NavLink>: */
+                
+                <h2 className="slideTitle">{slide.title}</h2>}
+
               <h3 className="slideSubtitle">{slide.subtitle}</h3>
-              <p className="slideDescription">{slide.description}</p>
+              <p className="slideDescription">{slide.description}</p>  
           </div>
         </div>
       </div>

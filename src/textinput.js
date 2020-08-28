@@ -1,5 +1,5 @@
 import React, {useState, useRef, useEffect, useReducer} from 'react';
-import { Button, Input, ButtonGroup, FormGroup, Progress, Container, Fade} from 'reactstrap';
+import { Button, ButtonGroup, FormGroup, Progress, Container, Fade} from 'reactstrap';
 import {NavLink} from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
 import { slideInLeft } from 'react-animations';
@@ -23,8 +23,6 @@ let [diff, setDiff] = useState(0)
 
 const [content, setValue] = useState("")
 
-const [characters, setCharacters] = useState(0)
-
 let emo
 let initialState = {}
 let emotions
@@ -44,15 +42,6 @@ const[state, dispatch] = useReducer(reducer, initialState)
 
 let secs = 0
 
- useEffect(()=>{
-
-        console.log(characters)
-
-         if (characters>20) {
-                 
-                alert('YOU HAVE REACHED THE LIMIT OF WORDS permitted')}
-
- },[characters])
 
 const showEmotion = (emotionData) => {
 
